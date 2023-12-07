@@ -15,12 +15,25 @@ func enableCors(w http.ResponseWriter) {
 }
 
 func dataHandler(w http.ResponseWriter, r *http.Request) { //パスパラメータの有無でエンドポイント分けれないので、無理やりURLを解析する。
-
-	param := strings.TrimPrefix(r.URL.Path, "/api/v1/data/")
-	if param == "" || param == "/" {	
-		getAlltodo(w,r)
-	} else {
-		getSingleTodo(w,r,param)
+	switch r.Method {
+	case http.MethodGet:
+		param := strings.TrimPrefix(r.URL.Path, "/api/v1/data/")
+		if param == "" || param == "/" {	
+			getAlltodo(w,r)
+		} else {
+			getSingleTodo(w,r,param)
+		}
+	// case http.MethodPost:
+	// 	// POSTリクエストの処理
+	// 	handlePost(w, r)
+	// case http.MethodPut:
+	// 	// PUTリクエストの処理
+	// 	handlePut(w, r)
+	// case http.MethodDelete:
+	// 	// DELETEリクエストの処理
+	// 	handleDelete(w, r)
+	default:
+		http.Error(w, "Invalid method", http.StatusMethodNotAllowed)
 	}
 }
 
