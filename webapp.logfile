@@ -1,0 +1,14 @@
+2023/12/06 23:32:53 main.go:15: tets
+2023/12/06 23:33:06 main.go:15: tets
+2023/12/06 23:52:08 base.go:36: missing "=" after "go_todo" in connection info string"
+2023/12/07 00:19:04 user.go:27: sql: converting argument $1 type: unsupported type func() uuid.UUID, a func
+2023/12/07 00:19:31 user.go:27: pq: syntax error at or near ","
+2023/12/07 00:21:27 user.go:27: pq: syntax error at or near ","
+2023/12/07 00:26:29 user.go:27: pq: syntax error at or near ","
+2023/12/07 00:30:38 user.go:27: pq: syntax error at or near ","
+2023/12/07 00:32:16 user.go:27: pq: syntax error at or near ","
+2023/12/07 00:32:30 user.go:27: pq: syntax error at or near ","
+2023/12/07 00:35:32 user.go:27: pq: syntax error at or near ","
+2023/12/07 00:36:02 user.go:27: pq: syntax error at or near ")"
+2023/12/07 08:26:31 main.go:16: tets
+2023/12/07 08:27:04 main.go:16: tets
