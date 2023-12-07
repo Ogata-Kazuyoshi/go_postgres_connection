@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"todoapp/app/models"
+	"todoapp/app/controllers"
 	"todoapp/config"
 )
 
@@ -30,17 +30,22 @@ func main()  {
 	// u, _ := models.GetAllUser()
 	// fmt.Println("getAllUser :",u)
 
+
+	//TOdo関係
+
 	// update用 
 	// todo := &models.Todo{}
 	// todo.UpdateTodo(1, map[string]interface{}{"content": "12345"})
 
 	// delete確認用
-	models.DeleteTodo(2)
+	// models.DeleteTodo(2)
 
-	utodo, _ := models.GetAllTodo()
-	fmt.Println("getAllTodo : ",utodo)
+	// utodo, _ := models.GetAllTodo()
+	// fmt.Println("getAllTodo : ",utodo)
 
-	ulimittodo, _ := models.GetTodo(1)
-	fmt.Println("getTodo : ",ulimittodo)
+	// ulimittodo, _ := models.GetTodo(1)
+	// fmt.Println("getTodo : ",ulimittodo)
+
+	controllers.StartMainServer()
 
 }
