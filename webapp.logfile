@@ -12,3 +12,8 @@
 2023/12/07 00:36:02 user.go:27: pq: syntax error at or near ")"
 2023/12/07 08:26:31 main.go:16: tets
 2023/12/07 08:27:04 main.go:16: tets
+2023/12/07 09:58:29 main.go:18: tets
+2023/12/07 09:59:58 main.go:18: tets
+2023/12/07 10:00:36 main.go:18: tets
+2023/12/07 10:05:28 main.go:17: tets
+2023/12/07 10:05:44 main.go:17: tets
