@@ -20,3 +20,13 @@
 2023/12/07 10:17:44 main.go:17: tets
 2023/12/07 10:18:36 main.go:17: tets
 2023/12/07 10:19:17 main.go:17: tets
+2023/12/07 10:34:01 todos.go:27: pq: got 3 parameters but the statement requires 4
+2023/12/07 10:35:25 todos.go:26: pq: INSERT has more expressions than target columns
+2023/12/07 10:36:47 todos.go:26: pq: INSERT has more expressions than target columns
+2023/12/07 10:47:51 main.go:17: tets
+2023/12/07 10:48:31 main.go:17: tets
+2023/12/07 10:50:49 main.go:17: tets
+2023/12/07 10:54:52 todos.go:28: pq: syntax error at or near "intotodos"
+2023/12/07 10:56:50 main.go:17: tets
+2023/12/07 10:59:06 main.go:17: tets
+2023/12/07 11:01:34 main.go:17: tets

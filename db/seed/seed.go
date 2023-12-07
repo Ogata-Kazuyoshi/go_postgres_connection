@@ -26,4 +26,25 @@ func main() {
 		u.CreateUser()
 	}
 
+		// テーブルの全てのデータを削除
+		_, err2 := models.Db.Exec("TRUNCATE TABLE todos")
+		if err2!= nil {
+			log.Fatalln(err)
+		}
+	
+		// 新しいSeedを流す
+		todos := []models.Todo {
+			{Content: "abcdef",UserID: 5},
+			{Content: "ghijk",UserID: 5},
+			{Content: "fadsfadsf",UserID: 5},
+		}
+	
+		for _, todo := range todos {
+			u := &todo
+			fmt.Println(u)
+			u.CreateTodo()
+		}
+
+	
+
 }
