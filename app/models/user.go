@@ -16,7 +16,7 @@ type User struct {
 	CreatedAt time.Time
 }
 
-//新規作成用
+//新規作成用 これは(u *User)をつけてるので、Userとしてのメソッドに組み込む。理由はUserの型で存在して欲しいから
 func (u *User) CreateUser() (err error) {
 	cmd := `insert into users (
 		uuid,
@@ -32,7 +32,7 @@ func (u *User) CreateUser() (err error) {
 	return err 
 }
 
-//ユーザー名で該当するデータを取ってくる用
+//ユーザー名で該当するデータを取ってくる用 これは(u *User)をつけていないので、単なる関数として呼び出し可能
 func GetUser(username string) ([]User, error)  {
 	var users []User
 	psql := sq.StatementBuilder.PlaceholderFormat(sq.Dollar)
@@ -65,7 +65,7 @@ func GetUser(username string) ([]User, error)  {
 	return users, nil
 }
 
-//データをすべて取得するよう
+//データをすべて取得するよう これは(u *User)をつけていないので、単なる関数として呼び出し可能
 func GetAllUser() ([]User, error)  {
 	var users []User
 	psql := sq.StatementBuilder.PlaceholderFormat(sq.Dollar)
@@ -98,7 +98,7 @@ func GetAllUser() ([]User, error)  {
 	return users, nil
 }
 
-//該当するIdのデータを更新するよう
+//該当するIdのデータを更新するよう これは(u *User)をつけてるので、Userとしてのメソッドに組み込む。理由はUserの型を持った変数でUpdateかけたいから
 func (u *User) UpdateUser(id int, updates map[string]interface{}) {
 	psql := sq.StatementBuilder.PlaceholderFormat(sq.Dollar)
 	
@@ -118,8 +118,8 @@ func (u *User) UpdateUser(id int, updates map[string]interface{}) {
 	}
 }
 
-//該当するIdのデータを削除するよう
-func (u *User) DeleteUser(id int) {
+//該当するIdのデータを削除するよう これは(u *User)をつけていないので、単なる関数として呼び出し可能。idさえ指定したら一意に決めれる
+func  DeleteUser(id int) {
 	psql := sq.StatementBuilder.PlaceholderFormat(sq.Dollar)
 	
 	sql, args, err := psql.Delete("users").Where(sq.Eq{"id": id}).ToSql()

@@ -16,8 +16,8 @@ func main()  {
 
 	log.Println("tets")
 	//  get確認用
-	u,_:= models.GetAllUser()
-	fmt.Println("getAllUser : ",u)
+	// u,_:= models.GetAllUser()
+	// fmt.Println("getAllUser : ",u)
 
 	//update用 
 	// user := &models.User{}
@@ -25,10 +25,10 @@ func main()  {
 	// u,_:= models.GetAllUser()
 	// fmt.Println("getAllUser : ",u)
 
-	//delete確認用
+	// delete確認用
 	// user := &models.User{}
-	// user.DeleteUser(4)
-	// u, _ := models.GetAllUser()
-	// fmt.Println("getAllUser :",u)
+	models.DeleteUser(4)
+	u, _ := models.GetAllUser()
+	fmt.Println("getAllUser :",u)
 
 }
